@@ -10,9 +10,6 @@
 // Tie "paper" variable to 1.
 // Tie "scissors" variable to 2.
 
-
-
-
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
@@ -24,7 +21,6 @@ function getComputerChoice() {
     }
 
 console.log(getComputerChoice())
-
 
 //"Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs. Hint: Use the prompt method to get the user’s input.""
 
@@ -46,12 +42,12 @@ console.log(getComputerChoice())
 //         return "Paper";
 //     } else if (userAnswer === "Scissors") {
 //         return "Scissors";
-//     } else (userAnswer === "scissors")
+//     } else
 //         return "Scissors";
 //     }
 
 // I wanted to experiment because the below code is what I envisioned initially, and the above version is what I had to settle with when this didn't work. I had the right idea with using ||, but writing "Rock" || "rock" wouldn't work because I needed to explicitly tell the computer "userAnswer ==== "Rock" || userAnswer === "rock". Including the variable was the important piece I was missing.
-function getHumanChoice () {
+function getHumanChoice() {
     let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
     if (userAnswer === "Rock" || userAnswer === "rock") {
         return "Rock";
@@ -63,8 +59,34 @@ function getHumanChoice () {
 
 console.log(getHumanChoice())
 
-// function sum(a, b) {
-//     return (a + b);
-// }
+//Declare the players score variables
 
-// console.log(sum(18,4));
+const humanScore = 0;
+const computerScore = 0;
+
+console.log(humanScore)
+
+//Write a function that calls the user's choice and the computer's choice, compares them (plays a round), determines the score, and announces the winner.
+// Rock beats scissors
+// Paper beats rock
+// Scissors beats paper
+
+function playRound (humanChoice, computerChoice) {
+    if (humanChoice === "Rock" && computerChoice === "Scissors") {
+        return "Rock beats scissors. You win!";
+    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
+        return "Paper beats rock. You win!";
+    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+        return "Scissors beats paper. You win!";
+    } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
+        return "Rock beats scissors. You lose!"; 
+    } else if (humanChoice === "Rock" && computerChoice === "Paper") {
+        return "Paper beats rock. You lose!";
+    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
+        return "Scissors beats paper. You lose!";
+    }
+}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
