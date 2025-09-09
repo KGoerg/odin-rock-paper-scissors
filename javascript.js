@@ -25,7 +25,33 @@ function getComputerChoice() {
 
 console.log(getComputerChoice())
 
-// }
+
+//"Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs. Hint: Use the prompt method to get the user’s input.""
+
+// User will need a prompt telling them, "Enter your selection: Rock, Paper, or Scissors."
+// If the user enters "Rock or rock", return "Rock".
+// If the user enters "Paper or paper", return "Paper".
+// If the user enters "Scissors or scissors", return "Scissors".
+
+//Below code works but want to try something
+function getHumanChoice () {
+    let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
+    if (userAnswer === "Rock") {
+        return "Rock";
+    } else if (userAnswer === "rock") {
+        return "Rock";
+    } else if (userAnswer === "Paper") {
+        return "Paper";
+    } else if (userAnswer === "paper") {
+        return "Paper";
+    } else if (userAnswer === "Scissors") {
+        return "Scissors";
+    } else (userAnswer === "scissors")
+        return "Scissors";
+    }
+
+console.log(getHumanChoice(""))
+
 // function sum(a, b) {
 //     return (a + b);
 // }
