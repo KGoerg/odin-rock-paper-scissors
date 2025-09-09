@@ -34,23 +34,34 @@ console.log(getComputerChoice())
 // If the user enters "Scissors or scissors", return "Scissors".
 
 //Below code works but want to try something
+// function getHumanChoice () {
+//     let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
+//     if (userAnswer === "Rock") {
+//         return "Rock";
+//     } else if (userAnswer === "rock") {
+//         return "Rock";
+//     } else if (userAnswer === "Paper") {
+//         return "Paper";
+//     } else if (userAnswer === "paper") {
+//         return "Paper";
+//     } else if (userAnswer === "Scissors") {
+//         return "Scissors";
+//     } else (userAnswer === "scissors")
+//         return "Scissors";
+//     }
+
+// I wanted to experiment because the below code is what I envisioned initially, and the above version is what I had to settle with when this didn't work. I had the right idea with using ||, but writing "Rock" || "rock" wouldn't work because I needed to explicitly tell the computer "userAnswer ==== "Rock" || userAnswer === "rock". Including the variable was the important piece I was missing.
 function getHumanChoice () {
     let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
-    if (userAnswer === "Rock") {
+    if (userAnswer === "Rock" || userAnswer === "rock") {
         return "Rock";
-    } else if (userAnswer === "rock") {
-        return "Rock";
-    } else if (userAnswer === "Paper") {
+    } else if (userAnswer === "Paper" || userAnswer === "paper") {
         return "Paper";
-    } else if (userAnswer === "paper") {
-        return "Paper";
-    } else if (userAnswer === "Scissors") {
-        return "Scissors";
-    } else (userAnswer === "scissors")
+    } else
         return "Scissors";
     }
 
-console.log(getHumanChoice(""))
+console.log(getHumanChoice())
 
 // function sum(a, b) {
 //     return (a + b);
