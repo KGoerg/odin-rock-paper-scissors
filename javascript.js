@@ -57,14 +57,10 @@ function getHumanChoice() {
         return "Scissors";
     }
 
-console.log(getHumanChoice())
-
 //Declare the players score variables
 
 const humanScore = 0;
 const computerScore = 0;
-
-console.log(humanScore)
 
 //Write a function that calls the user's choice and the computer's choice, compares them (plays a round), determines the score, and announces the winner.
 // Rock beats scissors
