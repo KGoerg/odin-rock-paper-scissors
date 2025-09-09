@@ -20,8 +20,6 @@ function getComputerChoice() {
         return "Scissors";
     }
 
-console.log(getComputerChoice())
-
 //"Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs. Hint: Use the prompt method to get the user’s input.""
 
 // User will need a prompt telling them, "Enter your selection: Rock, Paper, or Scissors."
@@ -62,16 +60,16 @@ function getHumanChoice() {
 const humanScore = 0;
 const computerScore = 0;
 
-//Write a function that calls the user's choice and the computer's choice, compares them (plays a round), determines the score, and announces the winner.
+//Write a function that calls the user's choice and the computer's choice, compares them (plays a round), adds + 1 to the winner's score, and announces the winner.
 // Rock beats scissors
-// Paper beats rock
-// Scissors beats paper
+// Paper beats rock 
+// Scissors beats paper 
 
 function playRound (humanChoice, computerChoice) {
-    
-}
+    return humanSelection && computerSelection;
+    }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+console.log(playRound(humanSelection, computerSelection));
