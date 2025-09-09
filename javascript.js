@@ -55,6 +55,8 @@ function getHumanChoice() {
         return "Scissors";
     }
 
+console.log(getHumanChoice(""));
+
 //Declare the players score variables
 
 const humanScore = 0;
@@ -65,6 +67,7 @@ const computerScore = 0;
 // Paper beats rock 
 // Scissors beats paper 
 
+//I'm apparently supposed to make getHumanChoice case-insensitive within playRound???
 function playRound (humanChoice, computerChoice) {
     return humanSelection && computerSelection;
     }
@@ -72,4 +75,4 @@ function playRound (humanChoice, computerChoice) {
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(playRound(humanSelection, computerSelection));
+// console.log(playRound(humanSelection, computerSelection));
