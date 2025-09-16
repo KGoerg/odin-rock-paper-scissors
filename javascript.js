@@ -58,8 +58,8 @@ function getHumanChoice() {
 
 // //Declare the players score variables
 
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 // //Write a function that calls the user's choice and the computer's choice, compares them (plays a round), adds + 1 to the winner's score, and announces the winner.
 // // Rock beats scissors
@@ -74,21 +74,24 @@ function playRound (humanChoice, computerChoice) {
     console.log(computerSelection);
     let winner = "You win!";
     let loser = "You lose!";
+    let newHumanScore = ++humanScore;
+    let newComputerScore = ++computerScore;
     if (humanSelection === computerSelection) {
         return "No winner. It's a tie!";
     } else if (humanSelection === "ROCK" && computerSelection === "SCISSORS") {
-        return winner + " Rock beats scissors.";
+        return winner + " Rock beats scissors. Your score is " + newHumanScore + ".";
     } else if (humanSelection === "PAPER" && computerSelection === "ROCK") {
-        return winner + " Paper beats rock.";
+        return winner + " Paper beats rock. Your score is " + newHumanScore + ".";
     } else if (humanSelection === "SCISSORS" && computerSelection === "PAPER") {
-        return winner + " Scissors beats paper.";
+        return winner + " Scissors beats paper. Your score is " + newHumanScore + ".";
     } else if (humanSelection === "ROCK" && computerSelection === "PAPER") {
-        return loser + " Paper beats rock.";
+        return loser + " Paper beats rock. The computer's score is " + newComputerScore + ".";
     } else if (humanSelection === "PAPER" && computerSelection === "SCISSORS") {
-        return loser + " Scissors beats paper.";
+        return loser + " Scissors beats paper. The computer's score is " + newComputerScore + ".";
     } else if (humanSelection === "SCISSORS" && computerSelection === "ROCK") {
-        return loser + " Rock beats scissors.";
+        return loser + " Rock beats scissors. The computer's score is " + newComputerScore + ".";
     }
 }
 
 console.log(playRound(humanSelection, computerSelection));
+
