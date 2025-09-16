@@ -13,12 +13,14 @@
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
-        return "Rock";
+        return "ROCK";
     } else if (randomNumber === 1) {
-        return "Paper";
+        return "PAPER";
     } else
-        return "Scissors";
+        return "SCISSORS";
     }
+
+// console.log(getComputerChoice())
 
 //"Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs. Hint: Use the prompt method to get the user’s input.""
 
@@ -45,34 +47,48 @@ function getComputerChoice() {
 //     }
 
 // I wanted to experiment because the below code is what I envisioned initially, and the above version is what I had to settle with when this didn't work. I had the right idea with using ||, but writing "Rock" || "rock" wouldn't work because I needed to explicitly tell the computer "userAnswer ==== "Rock" || userAnswer === "rock". Including the variable was the important piece I was missing.
+
 function getHumanChoice() {
     let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
-    if (userAnswer === "Rock" || userAnswer === "rock") {
-        return "Rock";
-    } else if (userAnswer === "Paper" || userAnswer === "paper") {
-        return "Paper";
-    } else
-        return "Scissors";
+    userAnswer = userAnswer.toUpperCase();
+    return userAnswer;
     }
 
-console.log(getHumanChoice(""));
+// console.log(getHumanChoice());
 
-//Declare the players score variables
+// //Declare the players score variables
 
 const humanScore = 0;
 const computerScore = 0;
 
-//Write a function that calls the user's choice and the computer's choice, compares them (plays a round), adds + 1 to the winner's score, and announces the winner.
-// Rock beats scissors
-// Paper beats rock 
-// Scissors beats paper 
-
-//I'm apparently supposed to make getHumanChoice case-insensitive within playRound???
-function playRound (humanChoice, computerChoice) {
-    return humanSelection && computerSelection;
-    }
+// //Write a function that calls the user's choice and the computer's choice, compares them (plays a round), adds + 1 to the winner's score, and announces the winner.
+// // Rock beats scissors
+// // Paper beats rock 
+// // Scissors beats paper 
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-// console.log(playRound(humanSelection, computerSelection));
+function playRound (humanChoice, computerChoice) {
+    console.log(humanSelection);
+    console.log(computerSelection);
+    let winner = "You win!";
+    let loser = "You lose!";
+    if (humanSelection === computerSelection) {
+        return "No winner. It's a tie!";
+    } else if (humanSelection === "ROCK" && computerSelection === "SCISSORS") {
+        return winner + " Rock beats scissors.";
+    } else if (humanSelection === "PAPER" && computerSelection === "ROCK") {
+        return winner + " Paper beats rock.";
+    } else if (humanSelection === "SCISSORS" && computerSelection === "PAPER") {
+        return winner + " Scissors beats paper.";
+    } else if (humanSelection === "ROCK" && computerSelection === "PAPER") {
+        return loser + " Paper beats rock.";
+    } else if (humanSelection === "PAPER" && computerSelection === "SCISSORS") {
+        return loser + " Scissors beats paper.";
+    } else if (humanSelection === "SCISSORS" && computerSelection === "ROCK") {
+        return loser + " Rock beats scissors.";
+    }
+}
+
+console.log(playRound(humanSelection, computerSelection));
