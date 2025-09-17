@@ -25,28 +25,9 @@ function getComputerChoice() {
 //"Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs. Hint: Use the prompt method to get the user’s input.""
 
 // User will need a prompt telling them, "Enter your selection: Rock, Paper, or Scissors."
-// If the user enters "Rock or rock", return "Rock".
-// If the user enters "Paper or paper", return "Paper".
-// If the user enters "Scissors or scissors", return "Scissors".
-
-//Below code works but want to try something
-// function getHumanChoice () {
-//     let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
-//     if (userAnswer === "Rock") {
-//         return "Rock";
-//     } else if (userAnswer === "rock") {
-//         return "Rock";
-//     } else if (userAnswer === "Paper") {
-//         return "Paper";
-//     } else if (userAnswer === "paper") {
-//         return "Paper";
-//     } else if (userAnswer === "Scissors") {
-//         return "Scissors";
-//     } else
-//         return "Scissors";
-//     }
-
-// I wanted to experiment because the below code is what I envisioned initially, and the above version is what I had to settle with when this didn't work. I had the right idea with using ||, but writing "Rock" || "rock" wouldn't work because I needed to explicitly tell the computer "userAnswer ==== "Rock" || userAnswer === "rock". Including the variable was the important piece I was missing.
+// If the user enters "Rock or rock", return "ROCK".
+// If the user enters "Paper or paper", return "PAPER".
+// If the user enters "Scissors or scissors", return "SCISSORS".
 
 function getHumanChoice() {
     let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
@@ -70,6 +51,8 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 function playRound (humanChoice, computerChoice) {
+    getComputerChoice();
+    getHumanChoice();
     console.log(humanSelection);
     console.log(computerSelection);
     let winner = "You win!";
@@ -91,7 +74,7 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-console.log(playRound(humanSelection, computerSelection));
+// console.log(playRound(humanSelection, computerSelection));
 
 // Write a function that plays 5 rounds of playRound, keeps track of the scores, and announces a winner at the end.
 // "Move your playRound function and score variables so that they’re declared inside of the new playGame function"
@@ -103,5 +86,9 @@ console.log(playRound(humanSelection, computerSelection));
 //     return counter;
 
 function playGame() {
-    
+    for (let i = 0; i < 5; i++) {
+       console.log(playRound()); 
+    }
 }
+
+playGame();
