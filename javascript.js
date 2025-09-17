@@ -52,22 +52,22 @@ function playRound() {
     const computerSelection = getComputerChoice();
     console.log(humanSelection);
     console.log(computerSelection);
-    let winner = "You win!";
-    let loser = "You lose!";
+    let winner = "You win this round!";
+    let loser = "You lose this round!";
     if (humanSelection === computerSelection) {
-        return "No winner. It's a tie!";
+        return "No winner this round. It's a tie!";
     } else if (humanSelection === "ROCK" && computerSelection === "SCISSORS") {
-        return winner + " Rock beats scissors. Your score is " + ++humanScore + ".";
+        return winner + " Rock beats scissors. Your total score is " + ++humanScore + ".";
     } else if (humanSelection === "PAPER" && computerSelection === "ROCK") {
-        return winner + " Paper beats rock. Your score is " + ++humanScore + ".";
+        return winner + " Paper beats rock. Your total score is " + ++humanScore + ".";
     } else if (humanSelection === "SCISSORS" && computerSelection === "PAPER") {
-        return winner + " Scissors beats paper. Your score is " + ++humanScore + ".";
+        return winner + " Scissors beats paper. Your total score is " + ++humanScore + ".";
     } else if (humanSelection === "ROCK" && computerSelection === "PAPER") {
-        return loser + " Paper beats rock. The computer's score is " + ++computerScore + ".";
+        return loser + " Paper beats rock. The computer's total score is " + ++computerScore + ".";
     } else if (humanSelection === "PAPER" && computerSelection === "SCISSORS") {
-        return loser + " Scissors beats paper. The computer's score is " + ++computerScore + ".";
+        return loser + " Scissors beats paper. The computer's total score is " + ++computerScore + ".";
     } else if (humanSelection === "SCISSORS" && computerSelection === "ROCK") {
-        return loser + " Rock beats scissors. The computer's score is " + ++computerScore + ".";
+        return loser + " Rock beats scissors. The computer's total score is " + ++computerScore + ".";
     }
 }
 
@@ -80,7 +80,20 @@ function playRound() {
 function playGame() {
     for (let i = 0; i < 5; i++) {
        console.log(playRound()); 
-    }
+       }
+}
+
+function announceWinner() {
+    if (humanScore > computerScore) {
+        return "You won, great job!";
+    } else if (computerScore > humanScore) {
+        return "You lost! Better luck next time."
+    } else 
+        return "";
 }
 
 playGame();
+// announceWinner();
+
+console.log(humanScore);
+console.log(computerScore);
