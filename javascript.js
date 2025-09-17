@@ -89,11 +89,8 @@ function announceWinner() {
     } else if (computerScore > humanScore) {
         return "You lost! Better luck next time."
     } else 
-        return "";
+        return "No winners. You and the computer tied!";
 }
 
 playGame();
-// announceWinner();
-
-console.log(humanScore);
-console.log(computerScore);
+console.log(announceWinner());
