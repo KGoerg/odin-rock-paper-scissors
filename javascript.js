@@ -47,12 +47,9 @@ let computerScore = 0;
 // // Paper beats rock 
 // // Scissors beats paper 
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-function playRound (humanChoice, computerChoice) {
-    getComputerChoice();
-    getHumanChoice();
+function playRound() {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
     console.log(humanSelection);
     console.log(computerSelection);
     let winner = "You win!";
@@ -79,11 +76,6 @@ function playRound (humanChoice, computerChoice) {
 // Write a function that plays 5 rounds of playRound, keeps track of the scores, and announces a winner at the end.
 // "Move your playRound function and score variables so that they’re declared inside of the new playGame function"
 // "Play 5 rounds by calling playRound 5 times."
-
-//let counter = 0;
-// const blahFunction = function () {
-//     counter++:
-//     return counter;
 
 function playGame() {
     for (let i = 0; i < 5; i++) {
