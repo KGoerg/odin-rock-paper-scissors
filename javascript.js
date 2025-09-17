@@ -74,24 +74,34 @@ function playRound (humanChoice, computerChoice) {
     console.log(computerSelection);
     let winner = "You win!";
     let loser = "You lose!";
-    let newHumanScore = ++humanScore;
-    let newComputerScore = ++computerScore;
     if (humanSelection === computerSelection) {
         return "No winner. It's a tie!";
     } else if (humanSelection === "ROCK" && computerSelection === "SCISSORS") {
-        return winner + " Rock beats scissors. Your score is " + newHumanScore + ".";
+        return winner + " Rock beats scissors. Your score is " + ++humanScore + ".";
     } else if (humanSelection === "PAPER" && computerSelection === "ROCK") {
-        return winner + " Paper beats rock. Your score is " + newHumanScore + ".";
+        return winner + " Paper beats rock. Your score is " + ++humanScore + ".";
     } else if (humanSelection === "SCISSORS" && computerSelection === "PAPER") {
-        return winner + " Scissors beats paper. Your score is " + newHumanScore + ".";
+        return winner + " Scissors beats paper. Your score is " + ++humanScore + ".";
     } else if (humanSelection === "ROCK" && computerSelection === "PAPER") {
-        return loser + " Paper beats rock. The computer's score is " + newComputerScore + ".";
+        return loser + " Paper beats rock. The computer's score is " + ++computerScore + ".";
     } else if (humanSelection === "PAPER" && computerSelection === "SCISSORS") {
-        return loser + " Scissors beats paper. The computer's score is " + newComputerScore + ".";
+        return loser + " Scissors beats paper. The computer's score is " + ++computerScore + ".";
     } else if (humanSelection === "SCISSORS" && computerSelection === "ROCK") {
-        return loser + " Rock beats scissors. The computer's score is " + newComputerScore + ".";
+        return loser + " Rock beats scissors. The computer's score is " + ++computerScore + ".";
     }
 }
 
 console.log(playRound(humanSelection, computerSelection));
 
+// Write a function that plays 5 rounds of playRound, keeps track of the scores, and announces a winner at the end.
+// "Move your playRound function and score variables so that they’re declared inside of the new playGame function"
+// "Play 5 rounds by calling playRound 5 times."
+
+//let counter = 0;
+// const blahFunction = function () {
+//     counter++:
+//     return counter;
+
+function playGame() {
+    
+}
