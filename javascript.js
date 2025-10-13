@@ -48,8 +48,8 @@ let computerScore = 0;
 // // Scissors beats paper 
 
 function playRound() {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+    const humanSelection = "You chose: " + getHumanChoice();
+    const computerSelection = "Computer chose: " + getComputerChoice();
     console.log(humanSelection);
     console.log(computerSelection);
     let winner = "You win this round!";
@@ -77,11 +77,11 @@ function playRound() {
 // "Move your playRound function and score variables so that they’re declared inside of the new playGame function"
 // "Play 5 rounds by calling playRound 5 times."
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-       console.log(playRound()); 
-       }
-}
+// function playGame() {
+//     for (let i = 0; i < 5; i++) {
+//        console.log(playRound()); 
+//        }
+// }
 
 function announceWinner() {
     if (humanScore > computerScore) {
@@ -92,5 +92,6 @@ function announceWinner() {
         return "No winners. You and the computer tied!";
 }
 
-playGame();
+// playGame();
+playRound();
 console.log(announceWinner());
