@@ -30,10 +30,22 @@ function getComputerChoice() {
 // If the user enters "Scissors or scissors", return "SCISSORS".
 
 function getHumanChoice() {
-    let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
-    userAnswer = userAnswer.toUpperCase();
-    return userAnswer;
-    }
+    // let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
+    // userAnswer = userAnswer.toUpperCase();
+    // return userAnswer;
+    let userAnswerRock = document.getElementById("rock");
+    userAnswerRock.addEventListener("click", () => {
+        console.log("ROCK");
+    })
+    let userAnswerPaper = document.getElementById("paper");
+    userAnswerPaper.addEventListener("click", () => {
+        console.log("PAPER");
+    })
+    let userAnswerScissors = document.getElementById("scissors");
+    userAnswerScissors.addEventListener("click", () => {
+        console.log("SCISSORS");
+    })
+};
 
 // console.log(getHumanChoice());
 
