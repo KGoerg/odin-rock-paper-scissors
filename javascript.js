@@ -33,21 +33,24 @@ function getHumanChoice() {
     // let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
     // userAnswer = userAnswer.toUpperCase();
     // return userAnswer;
+
     let userAnswerRock = document.getElementById("rock");
     userAnswerRock.addEventListener("click", () => {
-        console.log("ROCK");
+        return "ROCK";
     })
+
     let userAnswerPaper = document.getElementById("paper");
     userAnswerPaper.addEventListener("click", () => {
-        console.log("PAPER");
+        return "PAPER";
     })
+
     let userAnswerScissors = document.getElementById("scissors");
     userAnswerScissors.addEventListener("click", () => {
-        console.log("SCISSORS");
+        return "SCISSORS";
     })
 };
 
-// console.log(getHumanChoice());
+console.log(getHumanChoice());
 
 // //Declare the players score variables
 
@@ -59,7 +62,7 @@ let computerScore = 0;
 // // Paper beats rock 
 // // Scissors beats paper 
 
-function playRound() {
+function playRound(choice) {
     const humanSelection = "You chose: " + getHumanChoice();
     const computerSelection = "Computer chose: " + getComputerChoice();
     console.log(humanSelection);
