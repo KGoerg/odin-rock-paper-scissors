@@ -29,23 +29,11 @@ function getComputerChoice() {
 // If the user enters "Paper or paper", return "PAPER".
 // If the user enters "Scissors or scissors", return "SCISSORS".
 
-function getHumanChoice() {
+// function getHumanChoice() {
     // let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
     // userAnswer = userAnswer.toUpperCase();
     // return userAnswer;
-    let userAnswerRock = document.getElementById("rock");
-    userAnswerRock.addEventListener("click", () => {
-        console.log("ROCK");
-    })
-    let userAnswerPaper = document.getElementById("paper");
-    userAnswerPaper.addEventListener("click", () => {
-        console.log("PAPER");
-    })
-    let userAnswerScissors = document.getElementById("scissors");
-    userAnswerScissors.addEventListener("click", () => {
-        console.log("SCISSORS");
-    })
-};
+
 
 // console.log(getHumanChoice());
 
@@ -54,14 +42,30 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+
+let userAnswerRock = document.getElementById("rock");
+userAnswerRock.addEventListener("click", () => {
+    console.log(playRound("ROCK"))
+})
+    
+let userAnswerPaper = document.getElementById("paper");
+userAnswerPaper.addEventListener("click", () => {
+    console.log(playRound("PAPER"));
+})
+
+let userAnswerScissors = document.getElementById("scissors");
+userAnswerScissors.addEventListener("click", () => {
+    console.log(playRound("SCISSORS"));
+})
+
 // //Write a function that calls the user's choice and the computer's choice, compares them (plays a round), adds + 1 to the winner's score, and announces the winner.
 // // Rock beats scissors
 // // Paper beats rock 
 // // Scissors beats paper 
 
-function playRound() {
-    const humanSelection = "You chose: " + getHumanChoice();
-    const computerSelection = "Computer chose: " + getComputerChoice();
+function playRound(userAnswerButton) {
+    const humanSelection = userAnswerButton;
+    const computerSelection = getComputerChoice();
     console.log(humanSelection);
     console.log(computerSelection);
     let winner = "You win this round!";
@@ -83,6 +87,9 @@ function playRound() {
     }
 }
 
+
+
+
 // console.log(playRound(humanSelection, computerSelection));
 
 // Write a function that plays 5 rounds of playRound, keeps track of the scores, and announces a winner at the end.
@@ -96,14 +103,16 @@ function playRound() {
 // }
 
 function announceWinner() {
-    if (humanScore > computerScore) {
+    if (humanScore === 0 && computerScore === 0){
+        return "Get ready to play some Rock, Paper, Scissors! Choose Rock, Paper, or Scissors by clicking the corresponding button."
+    } else if (humanScore > computerScore) {
         return "You won, great job!";
     } else if (computerScore > humanScore) {
         return "You lost! Better luck next time."
     } else 
         return "No winners. You and the computer tied!";
-}
+};
 
 // playGame();
-playRound();
+// playRound();
 console.log(announceWinner());
