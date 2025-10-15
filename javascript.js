@@ -25,6 +25,9 @@ userAnswerRock.addEventListener("click", () => {
 userAnswerRock.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose rock!";
 });
+userAnswerRock.addEventListener("click", () => {
+    document.getElementById("computerChose").textContent = "The computer chose " + computerSelection;
+});
     
 let userAnswerPaper = document.getElementById("paper");
 userAnswerPaper.addEventListener("click", () => {
