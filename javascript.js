@@ -81,3 +81,9 @@ function announceWinner() {
 };
 
 console.log(announceWinner());
+
+const container = document.querySelector("#container");
+const youChose = document.createElement("p")
+youChose.textContent = "You chose";
+
+container.appendChild(youChose);
