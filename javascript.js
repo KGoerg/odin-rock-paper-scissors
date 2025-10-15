@@ -1,14 +1,4 @@
-// // Pseudocode:
-// "Write the code so that getComputerChoice will randomly return one of the following string values: “rock”, “paper” or “scissors”"
-
-// Hint was given to use Math.random to return a random number >= 0 and < 1. 
-
-// Math.random returns a random number between 0 and .9999999. Make it so that Math.random spits out 1-3. We need to multiply Math.random by 3, then round that answer with Math.floor. This should get us 1-3? -- It actually gives us 0-2 but that's still 3 numbers and makes sense! --
-
-// From the output of randomNumber:
-// Tie "rock" variable to 0.
-// Tie "paper" variable to 1.
-// Tie "scissors" variable to 2.
+// Below function gets a random number between 0 and 2, and returns rock, paper, or scissors when function calculates 0, 1, or 2.
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -20,28 +10,12 @@ function getComputerChoice() {
         return "SCISSORS";
     }
 
-// console.log(getComputerChoice())
-
-//"Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs. Hint: Use the prompt method to get the user’s input.""
-
-// User will need a prompt telling them, "Enter your selection: Rock, Paper, or Scissors."
-// If the user enters "Rock or rock", return "ROCK".
-// If the user enters "Paper or paper", return "PAPER".
-// If the user enters "Scissors or scissors", return "SCISSORS".
-
-// function getHumanChoice() {
-    // let userAnswer = prompt("Enter your selection: Rock, Paper, or Scissors");
-    // userAnswer = userAnswer.toUpperCase();
-    // return userAnswer;
-
-
-// console.log(getHumanChoice());
-
-// //Declare the players score variables
+// Global variables for human's score and computer's score.
 
 let humanScore = 0;
 let computerScore = 0;
 
+// Adds event listeners for the rock, paper, and scissors buttons. Each button runs the playRound function and passes "ROCK", "PAPER", or "SCISSORS" as a string into the playRound function so it can be compared to the string returned by the getComputerChoice function.
 
 let userAnswerRock = document.getElementById("rock");
 userAnswerRock.addEventListener("click", () => {
@@ -58,10 +32,7 @@ userAnswerScissors.addEventListener("click", () => {
     console.log(playRound("SCISSORS"));
 })
 
-// //Write a function that calls the user's choice and the computer's choice, compares them (plays a round), adds + 1 to the winner's score, and announces the winner.
-// // Rock beats scissors
-// // Paper beats rock 
-// // Scissors beats paper 
+// playRound compares the user's choice, based on the button they clicked, to the choice made by the computer. Depending on the comparison, either the user or the computer wins the game.
 
 function playRound(userAnswerButton) {
     const humanSelection = userAnswerButton;
@@ -88,19 +59,15 @@ function playRound(userAnswerButton) {
 }
 
 
-
-
-// console.log(playRound(humanSelection, computerSelection));
-
-// Write a function that plays 5 rounds of playRound, keeps track of the scores, and announces a winner at the end.
-// "Move your playRound function and score variables so that they’re declared inside of the new playGame function"
-// "Play 5 rounds by calling playRound 5 times."
+// Play 5 rounds by calling playRound 5 times.
 
 // function playGame() {
 //     for (let i = 0; i < 5; i++) {
 //        console.log(playRound()); 
 //        }
 // }
+
+// Returns the total winner 
 
 function announceWinner() {
     if (humanScore === 0 && computerScore === 0){
@@ -113,6 +80,4 @@ function announceWinner() {
         return "No winners. You and the computer tied!";
 };
 
-// playGame();
-// playRound();
 console.log(announceWinner());
