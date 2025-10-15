@@ -23,7 +23,7 @@ userAnswerRock.addEventListener("click", () => {
     console.log(playRound("ROCK"))
 });
 userAnswerRock.addEventListener("click", () => {
-    document.getElementById("youChose").innerText = "You chose rock!";
+    document.getElementById("youChose").textContent = "You chose rock!";
 });
     
 let userAnswerPaper = document.getElementById("paper");
@@ -31,7 +31,7 @@ userAnswerPaper.addEventListener("click", () => {
     console.log(playRound("PAPER"));
 });
 userAnswerPaper.addEventListener("click", () => {
-    document.getElementById("youChose").innerText = "You chose paper!";
+    document.getElementById("youChose").textContent = "You chose paper!";
 });
 
 let userAnswerScissors = document.getElementById("scissors");
@@ -39,14 +39,15 @@ userAnswerScissors.addEventListener("click", () => {
     console.log(playRound("SCISSORS"));
 });
 userAnswerScissors.addEventListener("click", () => {
-    document.getElementById("youChose").innerText = "You chose scissors!";
+    document.getElementById("youChose").textContent = "You chose scissors!";
 });
 
 // playRound compares the user's choice, based on the button they clicked, to the choice made by the computer. Depending on the comparison, either the user or the computer wins the game.
 
+const computerSelection = getComputerChoice();
+
 function playRound(userAnswerButton) {
     const humanSelection = userAnswerButton;
-    const computerSelection = getComputerChoice();
     console.log(humanSelection);
     console.log(computerSelection);
     let winner = "You win this round!";
