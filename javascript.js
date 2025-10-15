@@ -25,9 +25,6 @@ userAnswerRock.addEventListener("click", () => {
 userAnswerRock.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose rock!";
 });
-// userAnswerRock.addEventListener("click", () => {
-//     document.getElementById("computerChose").textContent = "The computer chose " + computerSelection;
-// });
     
 let userAnswerPaper = document.getElementById("paper");
 userAnswerPaper.addEventListener("click", () => {
@@ -54,6 +51,9 @@ function playRound(userAnswerButton) {
     console.log(computerSelection);
     let winner = "You win this round!";
     let loser = "You lose this round!";
+    userAnswerRock.addEventListener("click", () => {
+    document.getElementById("computerChose").textContent = "The computer chose " + computerSelection;
+});
     if (humanSelection === computerSelection) {
         return "No winner this round. It's a tie!";
     } else if (humanSelection === "ROCK" && computerSelection === "SCISSORS") {
@@ -69,7 +69,7 @@ function playRound(userAnswerButton) {
     } else if (humanSelection === "SCISSORS" && computerSelection === "ROCK") {
         return loser + " Rock beats scissors. The computer's total score is " + ++computerScore + ".";
     }
-}
+};
 
 
 // Play 5 rounds by calling playRound 5 times.
