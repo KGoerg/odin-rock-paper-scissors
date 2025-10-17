@@ -9,12 +9,11 @@ function getComputerChoice() {
     } else
         return "scissors";
     };
-// Creates variable to display the above function's result in the DOM. Will be redefined every time getComputerChoice is run on button click.
-let computerChoiceDisplay;
-// Global variables for user's score and computer's score.
 
+// Global variables for user's score, computer's score, and displaying computer's choice. computerChoiceDisplay will be redefined every time getComputerChoice is run on button click.
 let userScore = 0;
 let computerScore = 0;
+let computerChoiceDisplay;
 
 // Adds event listeners for the rock, paper, and scissors buttons. Each button runs the playRound function and passes "rock", "paper", or "scissors" as a string into the playRound function so it can be compared to the string returned by the getComputerChoice function.
 
@@ -33,19 +32,29 @@ userAnswerRock.addEventListener("click", () => {
 });
 // Paper button event listeners
 let userAnswerPaper = document.getElementById("paper");
+
 userAnswerPaper.addEventListener("click", () => {
-    console.log(playRound("paper"));
+    computerChoiceDisplay = getComputerChoice();
+    console.log(playRound("paper", computerChoiceDisplay))
 });
 userAnswerPaper.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose paper!";
 });
+userAnswerPaper.addEventListener("click", () => {
+    document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
+});
 // Scissor button event listeners
 let userAnswerScissors = document.getElementById("scissors");
+
 userAnswerScissors.addEventListener("click", () => {
-    console.log(playRound("scissors"));
+    computerChoiceDisplay = getComputerChoice();
+    console.log(playRound("scissors", computerChoiceDisplay))
 });
 userAnswerScissors.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose scissors!";
+});
+userAnswerScissors.addEventListener("click", () => {
+    document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
 
 // playRound compares the user's choice, based on the button they clicked, to the choice made by the computer. Depending on the comparison, either the user or the computer wins the game.
