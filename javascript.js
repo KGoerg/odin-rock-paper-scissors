@@ -9,7 +9,8 @@ function getComputerChoice() {
     } else
         return "scissors";
     };
-
+// Creates variable to display the above function's result in the DOM. Will be redefined every time getComputerChoice is run on button click.
+let computerChoiceDisplay;
 // Global variables for user's score and computer's score.
 
 let userScore = 0;
@@ -19,14 +20,16 @@ let computerScore = 0;
 
 // Rock button event listeners
 let userAnswerRock = document.getElementById("rock");
+
 userAnswerRock.addEventListener("click", () => {
-    console.log(playRound("rock", getComputerChoice()))
+    computerChoiceDisplay = getComputerChoice();
+    console.log(playRound("rock", computerChoiceDisplay))
 });
 userAnswerRock.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose rock!";
 });
 userAnswerRock.addEventListener("click", () => {
-    document.getElementById("computerChose").textContent = "The computer chose " + computerAnswer + "!";
+    document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
 // Paper button event listeners
 let userAnswerPaper = document.getElementById("paper");
