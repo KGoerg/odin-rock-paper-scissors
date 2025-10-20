@@ -35,10 +35,16 @@ userAnswerRock.addEventListener("click", () => {
 userAnswerRock.addEventListener("click", () => {
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
-// userAnswerRock.addEventListener("click", () => {
-//     if ()
-//     document.getElementById("whoWins").textContent = 
-// })
+userAnswerRock.addEventListener("click", () => {
+    if (userClickRock === computerChoiceDisplay) {
+	document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
+} else if (userClickRock && computerChoiceDisplay === "paper") {
+	document.getElementById("whoWins").textContent = "Paper beats rock. You lose this round!";
+} else {
+	document.getElementById("whoWins").textContent = "Rock beats scissors. You win this round!";
+}
+});
+
 // Paper button event listeners
 let userAnswerPaper = document.getElementById("paper");
 
