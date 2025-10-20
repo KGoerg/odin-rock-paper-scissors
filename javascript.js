@@ -16,6 +16,9 @@ let computerScore = 0;
 let computerChoiceDisplay;
 let winner = "You win this round!";
 let loser = "You lose this round!";
+let userClickRock = "rock";
+let userClickPaper = "paper";
+let userClickScissors = "scissors";
 
 // Adds event listeners for the rock, paper, and scissors buttons. Each button runs the playRound function and passes "rock", "paper", or "scissors" as a string into the playRound function so it can be compared to the string returned by the getComputerChoice function.
 
@@ -24,7 +27,7 @@ let userAnswerRock = document.getElementById("rock");
 
 userAnswerRock.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    console.log(playRound("rock", computerChoiceDisplay))
+    console.log(playRound(userClickRock, computerChoiceDisplay))
 });
 userAnswerRock.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose rock!";
@@ -32,12 +35,16 @@ userAnswerRock.addEventListener("click", () => {
 userAnswerRock.addEventListener("click", () => {
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
+// userAnswerRock.addEventListener("click", () => {
+//     if ()
+//     document.getElementById("whoWins").textContent = 
+// })
 // Paper button event listeners
 let userAnswerPaper = document.getElementById("paper");
 
 userAnswerPaper.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    console.log(playRound("paper", computerChoiceDisplay))
+    console.log(playRound(userClickPaper, computerChoiceDisplay))
 });
 userAnswerPaper.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose paper!";
@@ -50,7 +57,7 @@ let userAnswerScissors = document.getElementById("scissors");
 
 userAnswerScissors.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    console.log(playRound("scissors", computerChoiceDisplay))
+    console.log(playRound(userClickScissors, computerChoiceDisplay))
 });
 userAnswerScissors.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose scissors!";
