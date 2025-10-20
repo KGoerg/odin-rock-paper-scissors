@@ -59,24 +59,26 @@ function playRound(userButtonClick, computerAnswer) {
     // console.log(userSelection);
     // console.log(computerSelection);
     if (userSelection === computerSelection) {
-        document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
+        document.getElementById("roundWinner").textContent = "No winner this round. It's a tie!";
+        //User Wins:
     } else if (userSelection === "rock" && computerSelection === "scissors") {
-        document.getElementById("whoWins").textContent = "Rock beats scissors. You win this round!";
+        document.getElementById("roundWinner").textContent = "Rock beats scissors. You win this round!";
         document.getElementById("userRunningScore").textContent = `Your Score: ${++userScore}`;
     } else if (userSelection === "paper" && computerSelection === "rock") {
-        document.getElementById("whoWins").textContent = "Paper beats rock. You win this round!";
+        document.getElementById("roundWinner").textContent = "Paper beats rock. You win this round!";
         document.getElementById("userRunningScore").textContent = `Your Score: ${++userScore}`;
     } else if (userSelection === "scissors" && computerSelection === "paper") {
-        document.getElementById("whoWins").textContent = "Scissors beats paper. You win this round!";
+        document.getElementById("roundWinner").textContent = "Scissors beats paper. You win this round!";
         document.getElementById("userRunningScore").textContent = `Your Score: ${++userScore}`;
+        //Computer Wins:
     } else if (userSelection === "rock" && computerSelection === "paper") {
-        document.getElementById("whoWins").textContent = "Paper beats rock. You lose this round!";
+        document.getElementById("roundWinner").textContent = "Paper beats rock. You lose this round!";
         document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
     } else if (userSelection === "paper" && computerSelection === "scissors") {
-        document.getElementById("whoWins").textContent = "Scissors beats paper. You lose this round!";
+        document.getElementById("roundWinner").textContent = "Scissors beats paper. You lose this round!";
         document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
     } else if (userSelection === "scissors" && computerSelection === "rock") {
-        document.getElementById("whoWins").textContent = "Rock beats scissors. You lose this round!";
+        document.getElementById("roundWinner").textContent = "Rock beats scissors. You lose this round!";
         document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
     }
     announceWinner();
@@ -99,5 +101,3 @@ function announceWinner() {
         document.getElementById("winner").textContent = "YOU LOSE!!! Refresh the page to play again.";
     }
 };
-
-console.log(announceWinner());
