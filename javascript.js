@@ -14,6 +14,8 @@ function getComputerChoice() {
 let userScore = 0;
 let computerScore = 0;
 let computerChoiceDisplay;
+let winner = "You win this round!";
+let loser = "You lose this round!";
 
 // Adds event listeners for the rock, paper, and scissors buttons. Each button runs the playRound function and passes "rock", "paper", or "scissors" as a string into the playRound function so it can be compared to the string returned by the getComputerChoice function.
 
@@ -64,8 +66,6 @@ function playRound(userButtonClick, computerAnswer) {
     const computerSelection = computerAnswer;
     console.log(userSelection);
     console.log(computerSelection);
-    let winner = "You win this round!";
-    let loser = "You lose this round!";
     if (userSelection === computerSelection) {
         return "No winner this round. It's a tie!";
     } else if (userSelection === "rock" && computerSelection === "scissors") {
