@@ -72,6 +72,7 @@ function playGame(userButtonClick, computerAnswer) {
         document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
     }
     announceWinner();
+    // stopGame(); <-This doesn't work
 };
 
 function announceWinner() {
@@ -81,3 +82,12 @@ function announceWinner() {
         document.getElementById("winner").textContent = "YOU LOSE!!! Refresh the page to play again.";
     }
 };
+
+// This function doesn't work :(
+// function stopGame() {
+//     if (userScore === 5 || computerScore === 5) {
+//         userAnswerRock.addEventListener("click", function(event) {
+//             event.preventDefault()
+//         });
+//     }
+// }
