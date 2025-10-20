@@ -30,14 +30,15 @@ userAnswerRock.addEventListener("click", () => {
     console.log(playRound(userClickRock, computerChoiceDisplay))
     document.getElementById("youChose").textContent = "You chose rock!";
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
-    if (userClickRock === computerChoiceDisplay) {
-	document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
-} else if (userClickRock && computerChoiceDisplay === "paper") {
-	document.getElementById("whoWins").textContent = "Paper beats rock. You lose this round!";
-} else {
-	document.getElementById("whoWins").textContent = "Rock beats scissors. You win this round!";
-}
 });
+//     if (userClickRock === computerChoiceDisplay) {
+// 	document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
+// } else if (userClickRock && computerChoiceDisplay === "paper") {
+// 	document.getElementById("whoWins").textContent = "Paper beats rock. You lose this round!";
+// } else {
+// 	document.getElementById("whoWins").textContent = "Rock beats scissors. You win this round!";
+// }
+// });
 
 // Paper button event listeners
 let userAnswerPaper = document.getElementById("paper");
@@ -74,19 +75,19 @@ function playRound(userButtonClick, computerAnswer) {
     console.log(userSelection);
     console.log(computerSelection);
     if (userSelection === computerSelection) {
-        return "No winner this round. It's a tie!";
+        document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
     } else if (userSelection === "rock" && computerSelection === "scissors") {
-        return winner + " Rock beats scissors. Your total score is " + ++userScore + ".";
+        document.getElementById("whoWins").textContent = "Rock beats scissors. You win this round!";
     } else if (userSelection === "paper" && computerSelection === "rock") {
-        return winner + " Paper beats rock. Your total score is " + ++userScore + ".";
+        document.getElementById("whoWins").textContent = "Paper beats rock. You win this round!";
     } else if (userSelection === "scissors" && computerSelection === "paper") {
-        return winner + " Scissors beats paper. Your total score is " + ++userScore + ".";
+        document.getElementById("whoWins").textContent = "Scissors beats paper. You win this round!";
     } else if (userSelection === "rock" && computerSelection === "paper") {
-        return loser + " Paper beats rock. The computer's total score is " + ++computerScore + ".";
+        document.getElementById("whoWins").textContent = "Paper beats rock. You lose this round!";
     } else if (userSelection === "paper" && computerSelection === "scissors") {
-        return loser + " Scissors beats paper. The computer's total score is " + ++computerScore + ".";
+        document.getElementById("whoWins").textContent = "Scissors beats paper. You lose this round!";
     } else if (userSelection === "scissors" && computerSelection === "rock") {
-        return loser + " Rock beats scissors. The computer's total score is " + ++computerScore + ".";
+        document.getElementById("whoWins").textContent = "Rock beats scissors. You lose this round!";
     }
 };
 
