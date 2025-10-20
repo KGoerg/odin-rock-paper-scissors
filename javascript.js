@@ -56,8 +56,8 @@ userAnswerScissors.addEventListener("click", () => {
 function playRound(userButtonClick, computerAnswer) {
     const userSelection = userButtonClick;
     const computerSelection = computerAnswer;
-    console.log(userSelection);
-    console.log(computerSelection);
+    // console.log(userSelection);
+    // console.log(computerSelection);
     if (userSelection === computerSelection) {
         document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
     } else if (userSelection === "rock" && computerSelection === "scissors") {
@@ -86,9 +86,7 @@ function playRound(userButtonClick, computerAnswer) {
 // Returns the total winner 
 
 function announceWinner() {
-    if (userScore === 0 && computerScore === 0){
-        return "Get ready to play some Rock, Paper, Scissors! Choose Rock, Paper, or Scissors by clicking the corresponding button."
-    } else if (userScore > computerScore) {
+    if (userScore > computerScore) {
         return "You won, great job!";
     } else if (computerScore > userScore) {
         return "You lost! Better luck next time."
