@@ -14,22 +14,16 @@ function getComputerChoice() {
 let userScore = 0;
 let computerScore = 0;
 let computerChoiceDisplay;
-let winner = "You win this round!";
-let loser = "You lose this round!";
-let userClickRock = "rock";
-let userClickPaper = "paper";
-let userClickScissors = "scissors";
 
-// Adds event listeners for the rock, paper, and scissors buttons. Each button runs the playRound function and passes "rock", "paper", or "scissors" as a string into the playRound function so it can be compared to the string returned by the getComputerChoice function.
+// Adds event listeners for the rock, paper, and scissors buttons. Each button runs the playGame function and passes "rock", "paper", or "scissors" as a string into the playGame function so it can be compared to the string returned by the getComputerChoice function.
 
 // Rock button event listeners
 let userAnswerRock = document.getElementById("rock");
 
 userAnswerRock.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    playRound(userClickRock, computerChoiceDisplay);
-    document.getElementById("youChose").textContent = "You chose rock!";
-    document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
+    playGame("rock", computerChoiceDisplay);
+    document.getElementById("roundChoices").textContent = `You chose rock, and the computer chose ${computerChoiceDisplay}!`;
 });
 
 // Paper button event listeners
@@ -37,27 +31,23 @@ let userAnswerPaper = document.getElementById("paper");
 
 userAnswerPaper.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    playRound(userClickPaper, computerChoiceDisplay);
-    document.getElementById("youChose").textContent = "You chose paper!";
-    document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
+    playGame("paper", computerChoiceDisplay);
+    document.getElementById("roundChoices").textContent = `You chose paper, and the computer chose ${computerChoiceDisplay}!`;
 });
 // Scissor button event listeners
 let userAnswerScissors = document.getElementById("scissors");
 
 userAnswerScissors.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    playRound(userClickScissors, computerChoiceDisplay);
-    document.getElementById("youChose").textContent = "You chose scissors!";
-    document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
+    playGame("scissors", computerChoiceDisplay);
+    document.getElementById("roundChoices").textContent = `You chose scissors, and the computer chose ${computerChoiceDisplay}!`;
 });
 
-// playRound compares the user's choice, based on the button they clicked, to the choice made by the computer. Depending on the comparison, either the user or the computer wins the game.
+// playGame compares the user's choice, based on the button they clicked, to the choice made by the computer. Depending on the comparison, either the user or the computer wins the round and, ultimately, the game.
 
-function playRound(userButtonClick, computerAnswer) {
+function playGame(userButtonClick, computerAnswer) {
     const userSelection = userButtonClick;
     const computerSelection = computerAnswer;
-    // console.log(userSelection);
-    // console.log(computerSelection);
     if (userSelection === computerSelection) {
         document.getElementById("roundWinner").textContent = "No winner this round. It's a tie!";
         //User Wins:
@@ -84,20 +74,10 @@ function playRound(userButtonClick, computerAnswer) {
     announceWinner();
 };
 
-// Play 5 rounds by calling playRound 5 times.
-
-// function playGame() {
-//     for (let i = 0; i < 5; i++) {
-//        console.log(playRound()); 
-//        }
-// }
-
-// Returns the total winner 
-
 function announceWinner() {
-    if (userScore === 5) {
+    if (userScore === 5 && computerScore < 5) {
         document.getElementById("winner").textContent = "YOU WIN!!! Refresh the page to play again.";
-    } else if (computerScore === 5) {
+    } else if (computerScore === 5 && userScore < 5) {
         document.getElementById("winner").textContent = "YOU LOSE!!! Refresh the page to play again.";
     }
 };
