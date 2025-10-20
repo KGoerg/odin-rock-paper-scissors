@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+        
+body {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+        
+.header {
+    color: white;
+    background-color: rgb(52, 65, 48);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.instructions {
+    font-size: 20px;
+    background-color: rgb(99, 110, 95);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
