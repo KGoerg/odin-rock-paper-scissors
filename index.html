@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
     <script src="./javascript.js" defer> </script>
 </head>
 
 <body>
-    <h1>Time to play Rock, Paper, Scissors!</h1>
-
+    <div class="header">
+        <h1 class = "title">Time to play <span style="color: rgb(184, 184, 184)">Rock</span>, Paper, <span style="color: rgb(168, 221, 221)">Scissors!</span></h1>
+            <p class = "instructions">The winner is decided once your score, or the computer's score, reaches 5. Good luck!</p>
+    </div>
     <h2>Choose Rock, Paper, or Scissors below:</h2>
-    <button id="rock" value="ROCK">Rock</button>
-    <button id="paper" value="PAPER">Paper</button>
-    <button id="scissors" value="SCISSORS">Scissors</button>
-
-    <div id="choices"></div>
+        <div class = "buttons">
+            <button id="rock" value="ROCK">Rock</button>
+            <button id="paper" value="PAPER">Paper</button>
+            <button id="scissors" value="SCISSORS">Scissors</button>
+        </div>
+    <div id="choices">
         <p id="roundChoices"></p>
+    </div>
 
-    <div id="scoreDisplay"></div>
+    <div id="scoreDisplay">
         <p id="roundWinner"></p>
         <p id="userRunningScore">Your Score:</p>
         <p id="computerRunningScore">Computer's Score:</p>
         <p id="winner"></p>
+    </div>
 </body>
 </html>
