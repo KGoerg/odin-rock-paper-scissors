@@ -31,14 +31,6 @@ userAnswerRock.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose rock!";
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
-//     if (userClickRock === computerChoiceDisplay) {
-// 	document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
-// } else if (userClickRock && computerChoiceDisplay === "paper") {
-// 	document.getElementById("whoWins").textContent = "Paper beats rock. You lose this round!";
-// } else {
-// 	document.getElementById("whoWins").textContent = "Rock beats scissors. You win this round!";
-// }
-// });
 
 // Paper button event listeners
 let userAnswerPaper = document.getElementById("paper");
@@ -46,11 +38,7 @@ let userAnswerPaper = document.getElementById("paper");
 userAnswerPaper.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
     console.log(playRound(userClickPaper, computerChoiceDisplay))
-});
-userAnswerPaper.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose paper!";
-});
-userAnswerPaper.addEventListener("click", () => {
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
 // Scissor button event listeners
@@ -59,11 +47,7 @@ let userAnswerScissors = document.getElementById("scissors");
 userAnswerScissors.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
     console.log(playRound(userClickScissors, computerChoiceDisplay))
-});
-userAnswerScissors.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose scissors!";
-});
-userAnswerScissors.addEventListener("click", () => {
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
 
