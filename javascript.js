@@ -28,14 +28,8 @@ let userAnswerRock = document.getElementById("rock");
 userAnswerRock.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
     console.log(playRound(userClickRock, computerChoiceDisplay))
-});
-userAnswerRock.addEventListener("click", () => {
     document.getElementById("youChose").textContent = "You chose rock!";
-});
-userAnswerRock.addEventListener("click", () => {
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
-});
-userAnswerRock.addEventListener("click", () => {
     if (userClickRock === computerChoiceDisplay) {
 	document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
 } else if (userClickRock && computerChoiceDisplay === "paper") {
