@@ -62,10 +62,13 @@ function playRound(userButtonClick, computerAnswer) {
         document.getElementById("whoWins").textContent = "No winner this round. It's a tie!";
     } else if (userSelection === "rock" && computerSelection === "scissors") {
         document.getElementById("whoWins").textContent = "Rock beats scissors. You win this round!";
+        document.getElementById("userRunningScore").textContent = `Your Score: ${++userScore}`;
     } else if (userSelection === "paper" && computerSelection === "rock") {
         document.getElementById("whoWins").textContent = "Paper beats rock. You win this round!";
+        document.getElementById("userRunningScore").textContent = `Your Score: ${++userScore}`;
     } else if (userSelection === "scissors" && computerSelection === "paper") {
         document.getElementById("whoWins").textContent = "Scissors beats paper. You win this round!";
+        document.getElementById("userRunningScore").textContent = `Your Score: ${++userScore}`;
     } else if (userSelection === "rock" && computerSelection === "paper") {
         document.getElementById("whoWins").textContent = "Paper beats rock. You lose this round!";
     } else if (userSelection === "paper" && computerSelection === "scissors") {
