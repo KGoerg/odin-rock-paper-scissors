@@ -27,7 +27,7 @@ let userAnswerRock = document.getElementById("rock");
 
 userAnswerRock.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    console.log(playRound(userClickRock, computerChoiceDisplay))
+    playRound(userClickRock, computerChoiceDisplay);
     document.getElementById("youChose").textContent = "You chose rock!";
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
@@ -37,7 +37,7 @@ let userAnswerPaper = document.getElementById("paper");
 
 userAnswerPaper.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    console.log(playRound(userClickPaper, computerChoiceDisplay))
+    playRound(userClickPaper, computerChoiceDisplay);
     document.getElementById("youChose").textContent = "You chose paper!";
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
@@ -46,7 +46,7 @@ let userAnswerScissors = document.getElementById("scissors");
 
 userAnswerScissors.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
-    console.log(playRound(userClickScissors, computerChoiceDisplay))
+    playRound(userClickScissors, computerChoiceDisplay);
     document.getElementById("youChose").textContent = "You chose scissors!";
     document.getElementById("computerChose").textContent = "The computer chose " + computerChoiceDisplay + "!";
 });
@@ -79,6 +79,7 @@ function playRound(userButtonClick, computerAnswer) {
         document.getElementById("whoWins").textContent = "Rock beats scissors. You lose this round!";
         document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
     }
+    announceWinner();
 };
 
 // Play 5 rounds by calling playRound 5 times.
@@ -92,12 +93,11 @@ function playRound(userButtonClick, computerAnswer) {
 // Returns the total winner 
 
 function announceWinner() {
-    if (userScore > computerScore) {
-        return "You won, great job!";
-    } else if (computerScore > userScore) {
-        return "You lost! Better luck next time."
-    } else 
-        return "No winners. You and the computer tied!";
+    if (userScore === 5) {
+        document.getElementById("winner").textContent = "YOU WIN!!! Refresh the page to play again.";
+    } else if (computerScore === 5) {
+        document.getElementById("winner").textContent = "YOU LOSE!!! Refresh the page to play again.";
+    }
 };
 
 console.log(announceWinner());
