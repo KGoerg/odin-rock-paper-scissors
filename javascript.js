@@ -71,10 +71,13 @@ function playRound(userButtonClick, computerAnswer) {
         document.getElementById("userRunningScore").textContent = `Your Score: ${++userScore}`;
     } else if (userSelection === "rock" && computerSelection === "paper") {
         document.getElementById("whoWins").textContent = "Paper beats rock. You lose this round!";
+        document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
     } else if (userSelection === "paper" && computerSelection === "scissors") {
         document.getElementById("whoWins").textContent = "Scissors beats paper. You lose this round!";
+        document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
     } else if (userSelection === "scissors" && computerSelection === "rock") {
         document.getElementById("whoWins").textContent = "Rock beats scissors. You lose this round!";
+        document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
     }
 };
 
