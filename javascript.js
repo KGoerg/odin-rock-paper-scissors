@@ -63,13 +63,13 @@ function playGame(userButtonClick, computerAnswer) {
         //Computer Wins:
     } else if (userSelection === "rock" && computerSelection === "paper") {
         document.getElementById("roundWinner").textContent = "Paper beats rock. You lose this round!";
-        document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
+        document.getElementById("computerRunningScore").textContent = `Computer's Score: ${++computerScore}`;
     } else if (userSelection === "paper" && computerSelection === "scissors") {
         document.getElementById("roundWinner").textContent = "Scissors beats paper. You lose this round!";
-        document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
+        document.getElementById("computerRunningScore").textContent = `Computer's Score: ${++computerScore}`;
     } else if (userSelection === "scissors" && computerSelection === "rock") {
         document.getElementById("roundWinner").textContent = "Rock beats scissors. You lose this round!";
-        document.getElementById("computerRunningScore").textContent = `Computer Score: ${++computerScore}`;
+        document.getElementById("computerRunningScore").textContent = `Computer's Score: ${++computerScore}`;
     }
     announceWinner();
     // stopGame(); <-This doesn't work
