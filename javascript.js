@@ -23,6 +23,7 @@ let userAnswerRock = document.getElementById("rock");
 userAnswerRock.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
     playGame("rock", computerChoiceDisplay);
+    stopGame();
     document.getElementById("roundChoices").textContent = `You chose rock, and the computer chose ${computerChoiceDisplay}!`;
 });
 
@@ -32,6 +33,7 @@ let userAnswerPaper = document.getElementById("paper");
 userAnswerPaper.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
     playGame("paper", computerChoiceDisplay);
+    stopGame();
     document.getElementById("roundChoices").textContent = `You chose paper, and the computer chose ${computerChoiceDisplay}!`;
 });
 // Scissor button event listeners
@@ -40,6 +42,7 @@ let userAnswerScissors = document.getElementById("scissors");
 userAnswerScissors.addEventListener("click", () => {
     computerChoiceDisplay = getComputerChoice();
     playGame("scissors", computerChoiceDisplay);
+    stopGame();
     document.getElementById("roundChoices").textContent = `You chose scissors, and the computer chose ${computerChoiceDisplay}!`;
 });
 
@@ -84,10 +87,10 @@ function announceWinner() {
 };
 
 // This function doesn't work :(
-// function stopGame() {
-//     if (userScore === 5 || computerScore === 5) {
-//         userAnswerRock.addEventListener("click", function(event) {
-//             event.preventDefault()
-//         });
-//     }
-// }
+function stopGame() {
+    if (userScore === 5 || computerScore === 5) {
+        userAnswerRock.disabled = true;
+        userAnswerPaper.disabled = true;
+        userAnswerScissors.disabled = true;
+        }
+    };
