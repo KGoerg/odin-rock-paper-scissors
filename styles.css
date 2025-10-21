@@ -7,6 +7,8 @@ body {
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: rgb(99, 110, 95);
+    display: flex;
+    flex-direction: column;
 }
         
 .header {
@@ -15,20 +17,23 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 20px 20px 0px 20px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 50px;
+    flex: auto;
 }
 
 .instructions {
     font-size: 20px;
     background-color: rgb(99, 110, 95);
     padding: 20px;
-    margin: 20px 100px 0 100px;
+    margin: 20px 100px 10px 100px;
     border-radius: 80px;
+    border: 3px solid gray;
 }
 
 .buttons {
     display: flex;
-    margin: 20px 0 30px 0;
+    margin: 30px 0 30px 0;
     justify-content: space-evenly;
 }
 
@@ -37,28 +42,41 @@ body {
 #scissors {
     width: 300px;
     height: 300px;
-    border-width: 3px;
-    border-radius: 20px;
+    border-width: 8px;
+    border-radius: 200px;
+    border-color: gray;
     font-size: 30px;
     font-weight: bold;
 }
 
 #rock {
-    background-color: rgb(184, 184, 184)
+    background-color: rgb(185, 170, 165)
 }
 
 #scissors {
     background-color: rgb(168, 221, 221);
 }
 
-#scoreDisplay {
+.scoreDisplay {
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    font-weight: bold;
     font-size: 20px;
     background-color: rgb(52, 65, 48);
-    /* Need to figure out how to get this to take up the remaining space on the page. Flex-grow below didn't do the trick. */
-    /* flex-grow: 1; */
+    padding: 50px;
+    margin: 60px 200px 0 200px;
+    border-radius: 80px;
+    border: 3px solid gray;
+    gap: 20px;
+    min-width: 0px;
 }
+
+#userRunningScore,
+#computerRunningScore {
+    font-weight: bold;
+}
+
+#winner {
+    font-size: 40px;
+}
+
